@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Responsivo - Vinicius Schimidt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Design Responsivo</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#conceito">Conceito</a></li>
+                <li><a href="#flexbox">Flexbox</a></li>
+                <li><a href="#grid">Grid</a></li>
+                <li><a href="#breakpoints">Breakpoints</a></li>
+                <li><a href="#conclusao">Conclusão</a></li>
+                <li><a href="#referencias">Referências</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="capa">
+            <p class="curso">Fatec Sorocaba - Análise e Desenvolvimento de Sistemas</p>
+            <h2>Conceitos, técnicas, ferramentas e tendências</h2>
+            <p class="autor">Vinicius Walter Schimidt - Sorocaba, SP - 2026</p>
+        </section>
+
+        <section id="introducao">
+            <h2>1. Introdução</h2>
+            <p>O crescimento do acesso à internet por celulares e tablets mudou a forma como os sites precisam ser feitos. Até o início dos anos 2010 a maior parte dos acessos vinha de computadores, mas hoje a maioria vem de dispositivos móveis.</p>
+            <p>É nesse contexto que surge o <strong>Design Responsivo</strong>: uma forma de construir sites que se adaptam automaticamente a qualquer tamanho de tela, sem precisar criar uma versão separada para celular e outra para computador. O termo foi criado por Ethan Marcotte em 2010, unindo três técnicas: grids fluidos, imagens flexíveis e media queries.</p>
+        </section>
+
+        <section id="conceito">
+            <h2>2.1 Conceito de Design Responsivo</h2>
+            <p>Design Responsivo é a ideia de adaptar a página ao dispositivo que está acessando ela, considerando a largura da tela, a resolução e a orientação (retrato ou paisagem). Antigamente eram feitas duas versões de um mesmo site (uma para computador e outra para celular). Hoje, com o design responsivo, existe apenas um HTML e um CSS, e é o próprio CSS que reorganiza o layout.</p>
+            <p>Isso evita problemas comuns em telas pequenas, como precisar dar zoom ou rolar a página para os lados, e facilita a manutenção do site, já que qualquer alteração aparece em todos os dispositivos ao mesmo tempo.</p>
+        </section>
+
+        <section id="fundamentos">
+            <h2>2.4 Grids fluidos, media queries e imagens flexíveis</h2>
+            <p>Três técnicas sustentam o design responsivo:</p>
+            <ul>
+                <li><strong>Grids fluidos:</strong> usar porcentagem em vez de pixel fixo, para os elementos crescerem ou diminuírem junto com a tela.</li>
+                <li><strong>Media queries:</strong> regras de CSS que só valem a partir de uma certa largura de tela, usando <code>@media</code>.</li>
+                <li><strong>Imagens flexíveis:</strong> usar <code>max-width: 100%</code> nas imagens para elas não ficarem maiores que o espaço disponível.</li>
+            </ul>
+        </section>
+
+        <section id="flexbox">
+            <h2>2.5 CSS Flexbox</h2>
+            <p>O Flexbox organiza os elementos em uma linha ou em uma coluna, e ajuda a alinhar e distribuir o espaço entre eles. É muito usado em menus, listas de cartões e barras de navegação.</p>
+            <p>O elemento pai recebe <code>display: flex</code> e vira o "flex container". Os filhos diretos dele viram "flex items" e se ajustam automaticamente. As propriedades mais usadas são <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code> e <code>flex-wrap</code>.</p>
+            <p>Exemplo de Flexbox usado nesta própria página (o menu no topo):</p>
+            <div class="caixa-flex">
+                <div class="item-flex">Item 1</div>
+                <div class="item-flex">Item 2</div>
+                <div class="item-flex">Item 3</div>
+            </div>
+        </section>
+
+        <section id="grid">
+            <h2>2.6 CSS Grid</h2>
+            <p>O CSS Grid organiza os elementos em linhas e colunas ao mesmo tempo, o que ajuda bastante para montar o esqueleto de uma página inteira (cabeçalho, menu, conteúdo e rodapé).</p>
+            <p>O elemento pai recebe <code>display: grid</code> e a propriedade <code>grid-template-columns</code> define quantas colunas existem. Um exemplo comum é <code>repeat(3, 1fr)</code>, que cria três colunas do mesmo tamanho.</p>
+            <p>Exemplo de Grid:</p>
+            <div class="caixa-grid">
+                <div class="item-grid">1</div>
+                <div class="item-grid">2</div>
+                <div class="item-grid">3</div>
+            </div>
+        </section>
+
+        <section id="flex-grid">
+            <h2>2.7 Flexbox ou Grid?</h2>
+            <p>Flexbox e Grid não são concorrentes, e sim complementares. Uma boa regra é usar o <strong>Grid</strong> para organizar a estrutura geral da página, e o <strong>Flexbox</strong> para organizar os elementos menores dentro de cada parte da página, como os itens de um menu.</p>
+        </section>
+
+        <section id="imagens">
+            <h2>2.8 Imagens responsivas em HTML</h2>
+            <p>Além do CSS, o próprio HTML tem recursos para imagens responsivas. O atributo <code>srcset</code> permite indicar várias versões da mesma imagem em tamanhos diferentes, e o navegador escolhe sozinho qual baixar. Já a tag <code>&lt;picture&gt;</code> permite mostrar imagens diferentes dependendo do tamanho da tela.</p>
+        </section>
+
+        <section id="breakpoints">
+            <h2>2.9 Breakpoints e Mobile-First</h2>
+            <p>Um breakpoint é a largura de tela em que o layout muda. Um conjunto bem conhecido de breakpoints, popularizado pelo Bootstrap, é:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Largura</th>
+                        <th>Dispositivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>a partir de 576px</td>
+                        <td>Celular em modo paisagem</td>
+                    </tr>
+                    <tr>
+                        <td>a partir de 768px</td>
+                        <td>Tablet</td>
+                    </tr>
+                    <tr>
+                        <td>a partir de 992px</td>
+                        <td>Notebook</td>
+                    </tr>
+                    <tr>
+                        <td>a partir de 1200px</td>
+                        <td>Desktop grande</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>A abordagem <strong>mobile-first</strong> significa escrever primeiro o CSS pensando no celular, e depois usar <code>@media (min-width: ...)</code> para acrescentar estilos quando a tela for maior. É assim que o CSS desta página foi organizado.</p>
+        </section>
+
+        <section id="praticas">
+            <h2>2.13 Boas práticas</h2>
+            <ul>
+                <li>Usar porcentagem, em ou rem em vez de pixel fixo sempre que possível</li>
+                <li>Deixar os botões grandes o suficiente para tocar com o dedo</li>
+                <li>Testar o site em telas de tamanhos diferentes</li>
+                <li>Mostrar primeiro o conteúdo mais importante em telas pequenas</li>
+            </ul>
+        </section>
+
+        <section id="conclusao">
+            <h2>3. Conclusão</h2>
+            <p>O Design Responsivo é uma forma de pensar o desenvolvimento web que coloca a experiência do usuário em primeiro lugar, adaptando o site a qualquer tela. Ele depende do HTML semântico, do CSS (com Flexbox e Grid) e de imagens que se ajustam ao dispositivo. Aprender esses fundamentos é essencial para qualquer pessoa que trabalhe com desenvolvimento web hoje em dia.</p>
+        </section>
+
+        <section id="referencias">
+            <h2>Referências</h2>
+            <ul>
+                <li>MARCOTTE, Ethan. Responsive Web Design. A List Apart, maio 2010.</li>
+                <li>WIKIPÉDIA. Responsive web design. 2024.</li>
+                <li>DEVMEDIA. Guia completo de Flexbox CSS. 2026.</li>
+                <li>MDN WEB DOCS. Responsive images. 2026.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Vinicius Walter Schimidt - Fatec Sorocaba - 2026</p>
+    </footer>
+
+</body>
+</html>
