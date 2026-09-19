@@ -1,0 +1,53 @@
+.cabecalho{
+    background-color: #f4f1ea;
+    padding: 15px;
+}
+
+.cabecalho-title{
+    font-family: var(--font-title);
+    font-size: 40px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#frase-efeito{
+    font-family: var(--font-body);
+    font-size: 16px;
+}
+
+.cabecalho-selector{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.cabecalho-button{
+    background-color: var(--cor-button);
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0px 1px 1px black;
+    color: var(--branco);
+    padding: 8px 14px;
+    font-family: var(--font-body);
+    font-size: 15px;
+}
+
+
+@media (min-width: 768px) {
+    .cabecalho-title{
+        font-size: 60px;
+    }
+
+    .cabecalho-selector{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .cabecalho-title{
+        font-size: 75px;
+    }
+}

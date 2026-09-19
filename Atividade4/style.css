@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Manufacturing+Consent&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+@import url(reset.css);
+@import url(header.css);
+@import url(noticias.css);
+
+:root{
+    --font-title:"Manufacturing Consent";
+    --font-body:"EB Garamond";
+    --cor-button:#6f8eb8;
+    --branco:#fff;
+    --cor-fundo:#eeeeee;
+}
+
+body{
+    background-color: var(--cor-fundo);
+}
